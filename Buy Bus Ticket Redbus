@@ -1,0 +1,60 @@
+package assignments;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+public class redbus {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		 ChromeOptions chromeOptions = new ChromeOptions();
+		  chromeOptions.addArguments("--disabled-notifications");
+		 driver= new ChromeDriver(chromeOptions);
+		
+		 driver.manage().window().maximize();
+		driver.get("https://www.redbus.in/");
+
+		WebElement ToCity = driver.findElement(By.id("src"));
+		ToCity.sendKeys("Nag");
+		Thread.sleep(1000);
+
+		WebElement Nagpur = driver
+				.findElement(By.xpath("//*[@id=\"autoSuggestContainer\"]/div/div/div[1]/div/div[1]/ul/li[1]/div/text"));
+		Nagpur.click();
+
+		WebElement ToDestination = driver.findElement(By.id("dest"));
+		ToDestination.sendKeys("Pun");
+		Thread.sleep(1000);
+
+		WebElement Pune = driver
+				.findElement(By.xpath("//*[@id=\"autoSuggestContainer\"]/div/div/div[3]/div[1]/ul/li[1]/div/text"));
+		Pune.click();
+		Thread.sleep(1000);
+
+		WebElement Date = driver.findElement(By.id("Layer_1"));
+		Date.click();
+
+		Thread.sleep(1000);
+		WebElement DateSelection = driver
+				.findElement(By.xpath("//*[@id=\"onwardCal\"]/div/div[2]/div/div/div[3]/div[4]/span/div[4]/span"));
+		DateSelection.click();
+		Thread.sleep(1000);
+
+		WebElement Search = driver.findElement(By.id("search_button"));
+		Search.click();
+		Thread.sleep(3000);
+
+		System.out.println("Title: " + driver.getTitle());
+	
+		
+		
+
+	}
+}
