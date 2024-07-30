@@ -1,0 +1,478 @@
+package AssignmentTestNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+
+public class TriProject {
+	WebDriver driver;
+  @Test(priority=1)
+  public void automobile() throws InterruptedException {
+	  driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div/div[1]/ul/li[1]/a")).click();
+
+		WebElement make = driver.findElement(By.id("make"));
+		make.sendKeys("Ford");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("engineperformance")).sendKeys("500");
+		Thread.sleep(1000);
+
+		// ********************date**********************************************************************
+
+		WebElement Date = driver.findElement(By.id("opendateofmanufacturecalender"));
+		Date.click();
+		Thread.sleep(1000);
+
+		WebElement selectionDate = driver
+				.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[1]/td[7]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", selectionDate);
+
+		// ********************date**********************************************************************
+
+		WebElement seats = driver.findElement(By.id("numberofseats"));
+		seats.sendKeys("2");
+		Thread.sleep(1000);
+
+		WebElement fuel1 = driver.findElement(By.id("fuel"));
+		fuel1.sendKeys("Petrol");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("listprice")).sendKeys("1000");
+		Thread.sleep(1000);
+		driver.findElement(By.id("licenseplatenumber")).sendKeys("MH407734");
+		Thread.sleep(1000);
+		driver.findElement(By.id("annualmileage")).sendKeys("500");
+		Thread.sleep(1000);
+		driver.findElement(By.id("nextenterinsurantdata")).click();
+		
+		
+		System.out.println("Title: " + driver.getTitle()); 
+		
+		// *****************2nd page
+		// start**************************************************//
+
+		driver.findElement(By.id("firstname")).sendKeys("Anuj");
+		Thread.sleep(1000);
+		driver.findElement(By.id("lastname")).sendKeys("Paradkar");
+		Thread.sleep(1000);
+      //********************date*********************
+		WebElement date = driver.findElement(By.id("birthdate"));
+		date.sendKeys("06/08/2004");
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[4]/p/label[1]/span"))
+				.click();
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("streetaddress")).sendKeys("At Post Mihan Nagpur");
+		Thread.sleep(1000);
+
+		WebElement country = driver
+				.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[6]/select"));
+		country.sendKeys("India");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("zipcode")).sendKeys("441108");
+		Thread.sleep(1000);
+		driver.findElement(By.id("city")).sendKeys("NAGPUR");
+		Thread.sleep(1000);
+
+		WebElement occ = driver.findElement(By.id("occupation"));
+		occ.sendKeys("Employee");
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[10]/p/label[1]/span"))
+				.click();
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("website")).sendKeys("https://www.sparkstone.co.nz/sampleapp/101/app.php");
+		Thread.sleep(1000);
+//
+//		WebElement Picture = driver.findElement(By.id("open"));
+//		Picture.click();
+//		Picture.sendKeys("C:\\Users\\Anuj\\Pictures\\IMG_20211219_162526.jpg");
+//		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[12]/div/input"))
+				.sendKeys("C:\\\\Users\\\\Anuj\\\\Pictures\\\\IMG_20211219_162526.jpg");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[13]/button[2]"))
+				.click();
+		Thread.sleep(1000);
+//**********************3rd PAGE***********************************************
+
+		driver.findElement(By.id("startdate")).sendKeys("09/16/2024");
+		Thread.sleep(1000);
+
+		WebElement Insurance = driver.findElement(By.id("insurancesum"));
+		Insurance.sendKeys("3.000.000,00");
+		Thread.sleep(1000);
+
+		WebElement Rating = driver.findElement(By.id("meritrating"));
+		Rating.sendKeys("Bonus 1");
+		Thread.sleep(1000);
+
+		WebElement Damage = driver.findElement(By.id("damageinsurance"));
+		Damage.sendKeys("Full Coverage");
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[3]/div[5]/p/label[2]/span"))
+				.click();
+		Thread.sleep(1000);
+
+		WebElement Courtesy = driver.findElement(By.id("courtesycar"));
+		Courtesy.sendKeys("no");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("nextselectpriceoption")).click();
+		Thread.sleep(1000);
+		// *********************************4th page*****************************
+		driver.findElement(By.xpath(
+				"/html/body/div[1]/div/div[1]/div/div/form/div/section[4]/section/div[1]/table/tfoot/tr/th[2]/label[2]/span"))
+				.click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("nextsendquote")).click();
+		Thread.sleep(1000);
+		
+//		WebElement silver=driver.findElement(By.xpath("//*[@id=\"selectsilver_price\"]"));
+//		silver.sendKeys("243.00");
+//		Thread.sleep(1000);
+//		WebElement gold=driver.findElement(By.xpath("//*[@id=\"selectgold_price\"]"));
+//		gold.sendKeys("718.00");
+//		Thread.sleep(1000);
+//		WebElement platinum=driver.findElement(By.xpath("//*[@id=\"selectplatinum_price\"]"));
+//		platinum.sendKeys("1,410.00");
+//		Thread.sleep(1000);
+//		WebElement ultimate=driver.findElement(By.xpath("//*[@id=\"selectultimate_price\"]"));
+//		ultimate.sendKeys("2,685.00");
+		
+		
+		
+		// ******************************5th page*********************
+//		driver.findElement(By.id("email")).sendKeys("anujparadkar16@gmail.com");
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("phone")).sendKeys("7744001702");
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("username")).sendKeys("anuj16");
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("password")).sendKeys("AnujPara1681");
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("confirmpassword")).sendKeys("AnujPara1681");
+//		Thread.sleep(1000);;
+//		driver.findElement(By.id("Comments")).sendKeys("******************************************************");
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("sendemail")).click();
+//		WebElement ok=driver.findElement(By.className("sa-confirm-button-container"));
+//		ok.click();
+  }
+  @Test(priority=2)
+ public void camper() throws InterruptedException {
+	  driver.findElement(By.xpath("//*[@id=\"nav_camper\"]")).click();
+		Thread.sleep(1000);
+		WebElement make = driver.findElement(By.id("make"));
+		make.sendKeys("Honda");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("engineperformance")).sendKeys("2000");
+		Thread.sleep(1000);
+		
+		WebElement date=driver.findElement(By.id("dateofmanufacture"));
+		date.sendKeys("07/07/2024");
+		Thread.sleep(1000);
+		
+		WebElement seats=driver.findElement(By.id("numberofseats"));
+		seats.sendKeys("4");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[1]/div[5]/p/label[1]/span")).click();
+		Thread.sleep(1000);
+		
+		WebElement fuel= driver.findElement(By.id("fuel"));
+		fuel.sendKeys("Diesel");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("payload")).sendKeys("100");
+		Thread.sleep(1000);
+		driver.findElement(By.id("totalweight")).sendKeys("1000");
+		Thread.sleep(1000);
+		driver.findElement(By.id("listprice")).sendKeys("1000");
+		Thread.sleep(1000);
+		driver.findElement(By.id("licenseplatenumber")).sendKeys("MH407742");
+		Thread.sleep(1000);
+		driver.findElement(By.id("annualmileage")).sendKeys("100");
+		Thread.sleep(1000);
+		driver.findElement(By.id("nextenterinsurantdata")).click();
+		//******************************2nd Page**************************************
+		
+		driver.findElement(By.id("firstname")).sendKeys("Anuj");
+		Thread.sleep(1000);
+		driver.findElement(By.id("lastname")).sendKeys("Paradkar");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("birthdate")).sendKeys("08/16/2005");
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[4]/p/label[1]/span"))
+				.click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("streetaddress")).sendKeys("NAGPUR MIHAN");
+		Thread.sleep(1000);
+
+		WebElement country = driver
+				.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[6]/select"));
+		country.sendKeys("India");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("zipcode")).sendKeys("441108");
+		Thread.sleep(1000);
+		driver.findElement(By.id("city")).sendKeys("NAGPUR");
+		Thread.sleep(1000);
+
+		WebElement occ = driver.findElement(By.id("occupation"));
+		occ.sendKeys("Employee");
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[10]/p/label[4]/span"))
+				.click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("website")).sendKeys("https://www.sparkstone.co.nz/sampleapp/101/app.php");
+		Thread.sleep(1000);
+		
+		
+		// picture*********************************************************
+		driver.findElement(By.id("nextenterproductdata")).click();
+		// *********************3rd page***************************************
+
+				driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[3]/div[1]/input"))
+						.sendKeys("09/10/2024");
+				Thread.sleep(1000);
+
+				WebElement sum = driver.findElement(By.id("insurancesum"));
+				sum.sendKeys("35.000.000,00");
+				Thread.sleep(1000);
+
+				WebElement damage = driver.findElement(By.id("damageinsurance"));
+				damage.sendKeys("Full Coverage");
+				Thread.sleep(1000);
+
+				driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[3]/div[4]/p/label[2]/span"))
+						.click();
+
+				//driver.findElement(By.id("nextselectpriceoption")).click();
+				// *********************************4th page*****************************
+//				driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[4]/section/div[1]/table/tfoot/tr/th[2]/label[4]/span")).click();
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("nextsendquote")).click();
+//				Thread.sleep(1000);
+//				// ******************************5th page*********************
+//				driver.findElement(By.id("email")).sendKeys("anujparadkar16@gmail.com");
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("phone")).sendKeys("7744001702");
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("username")).sendKeys("anuj16");
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("password")).sendKeys("AnujPara1681");
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("confirmpassword")).sendKeys("AnujPara1681");
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("Comments")).sendKeys("******************************************************");
+//				Thread.sleep(1000);
+//				driver.findElement(By.id("sendemail")).click();
+
+	  
+  }
+  @Test(priority=3)
+ public void motercycle() throws InterruptedException {
+
+		driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div/div[1]/ul/li[3]/a")).click();
+		Thread.sleep(1000);
+
+		WebElement make = driver.findElement(By.id("make"));
+		make.sendKeys("BMW");
+		Thread.sleep(1000);
+
+		WebElement model = driver.findElement(By.id("model"));
+		model.sendKeys("Moped");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("cylindercapacity")).sendKeys("500");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("engineperformance")).sendKeys("1000");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("dateofmanufacture")).sendKeys("10/12/2001");
+		Thread.sleep(1000);
+
+		WebElement seats = driver.findElement(By.id("numberofseatsmotorcycle"));
+		seats.sendKeys("2");
+		Thread.sleep(1000);
+
+		WebElement lprice = driver.findElement(By.id("listprice"));
+		 lprice.sendKeys("500");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("annualmileage")).sendKeys("100");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("nextenterinsurantdata")).click();
+		Thread.sleep(1000);
+		//*********************2nd Page***********************************************
+		driver.findElement(By.id("firstname")).sendKeys("Anuj");
+		Thread.sleep(1000);
+		driver.findElement(By.id("lastname")).sendKeys("Paradkar");
+		Thread.sleep(1000);
+		driver.findElement(By.id("birthdate")).sendKeys("08/16/2000");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[4]/p/label[1]/span")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("streetaddress")).sendKeys("At Post Khapri Nagpur");
+		Thread.sleep(1000);
+		WebElement country=driver.findElement(By.id("country"));
+		country.sendKeys("India");
+		Thread.sleep(1000);
+		driver.findElement(By.id("zipcode")).sendKeys("441108");
+		Thread.sleep(1000);
+		driver.findElement(By.id("city")).sendKeys("NAGPUR");
+		Thread.sleep(1000);
+		
+		WebElement occ=driver.findElement(By.id("occupation"));
+		occ.sendKeys("Public Official");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[10]/p/label[1]/span")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("website")).sendKeys("https://www.sparkstone.co.nz/sampleapp/101/");
+		Thread.sleep(1000);
+		driver.findElement(By.id("nextenterproductdata")).click();
+		Thread.sleep(1000);
+		//******************************Picture*************************************
+		
+		//**********************************3rd Page**********************************
+		driver.findElement(By.id("startdate")).sendKeys("09/16/2024");
+		Thread.sleep(1000);
+		
+		WebElement sum=driver.findElement(By.id("insurancesum"));
+		sum.sendKeys("7.000.000,00");
+		Thread.sleep(1000);
+		
+		WebElement damage=driver.findElement(By.id("damageinsurance"));
+		damage.sendKeys("Full Coverage");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[3]/div[4]/p/label[1]/span")).click();
+		Thread.sleep(1000);
+	  
+ }
+  @Test(priority=4)
+ public void truck() throws InterruptedException {
+	  driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div/div[1]/ul/li[2]/a")).click();
+
+		WebElement make = driver.findElement(By.id("make"));
+		make.sendKeys("BMW");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("engineperformance")).sendKeys("2000");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("dateofmanufacture")).sendKeys("10/12/2001");
+		Thread.sleep(1000);
+
+		WebElement seats = driver.findElement(By.id("numberofseats"));
+		seats.sendKeys("2");
+		Thread.sleep(1000);
+
+		WebElement fuel = driver.findElement(By.id("fuel"));
+		fuel.sendKeys("diesel");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("payload")).sendKeys("500");
+		Thread.sleep(1000);
+		driver.findElement(By.id("totalweight")).sendKeys("1000");
+		Thread.sleep(1000);
+		driver.findElement(By.id("listprice")).sendKeys("1000");
+		Thread.sleep(1000);
+		driver.findElement(By.id("licenseplatenumber")).sendKeys("MH407742");
+		Thread.sleep(1000);
+		driver.findElement(By.id("annualmileage")).sendKeys("100");
+		Thread.sleep(1000);
+		driver.findElement(By.id("nextenterinsurantdata")).click();
+		// *******************************2nd Page*************************
+
+		driver.findElement(By.id("firstname")).sendKeys("Anuj");
+		Thread.sleep(1000);
+		driver.findElement(By.id("lastname")).sendKeys("Paradkar");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("birthdate")).sendKeys("08/07/2005");
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[4]/p/label[1]/span"))
+				.click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("streetaddress")).sendKeys("NAGPUR MIHAN");
+		Thread.sleep(1000);
+
+		WebElement country = driver
+				.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[6]/select"));
+		country.sendKeys("India");
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("zipcode")).sendKeys("441108");
+		Thread.sleep(1000);
+		driver.findElement(By.id("city")).sendKeys("NAGPUR");
+		Thread.sleep(1000);
+
+		WebElement occ = driver.findElement(By.id("occupation"));
+		occ.sendKeys("Employee");
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[2]/div[10]/p/label[4]/span"))
+				.click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("website")).sendKeys("https://www.sparkstone.co.nz/sampleapp/101/app.php");
+		Thread.sleep(1000);
+		// picture*********************************************************
+		driver.findElement(By.id("nextenterproductdata")).click();
+		// *********************3rd page***************************************
+
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/form/div/section[3]/div[1]/input"))
+				.sendKeys("10/10/2024");
+		Thread.sleep(1000);
+
+		WebElement sum = driver.findElement(By.id("insurancesum"));
+		sum.sendKeys("35.000.000,00");
+		Thread.sleep(1000);
+
+		WebElement damage = driver.findElement(By.id("damageinsurance"));
+		damage.sendKeys("No Coverage");
+		Thread.sleep(1000);
+
+	  
+ }
+  @BeforeTest
+	public void beforeTest() {
+		driver = new ChromeDriver();
+		driver.get("https://www.sparkstone.co.nz/sampleapp/101/app.php");
+		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+		driver.manage().window().maximize();
+	
+	}
+
+	@AfterTest
+	public void afterTest() {
+		// driver.close();
+	}
+
+}
