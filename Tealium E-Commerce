@@ -1,0 +1,116 @@
+public class TEALIUmProject {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://ecommerce.tealiumdemo.com/ch");
+
+		WebElement Account = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div[2]/div/a/span[2]"));
+		Account.click();
+
+		Thread.sleep(2000);
+		WebElement Register = driver.findElement(By.partialLinkText("Register"));
+		Register.click();
+		Thread.sleep(2000);
+
+//		
+		WebElement firstname = driver.findElement(By.id("firstname"));
+		firstname.sendKeys("anuj");
+		Thread.sleep(2000);
+		WebElement middle = driver.findElement(By.id("middlename"));
+		middle.sendKeys("M");
+		Thread.sleep(1000);
+		WebElement lastname = driver.findElement(By.name("lastname"));
+		lastname.sendKeys("paradkar");
+		Thread.sleep(2000);
+
+		WebElement email = driver.findElement(By.id("email_address"));
+		email.sendKeys("anujparadkar1111111136@gmail.com");
+
+		Thread.sleep(2000);
+		WebElement password = driver.findElement(By.id("password"));
+		password.sendKeys("anuj@123");
+
+		Thread.sleep(2000);
+		WebElement conpassword = driver.findElement(By.id("confirmation"));
+		conpassword.sendKeys("anuj@123");
+
+		Thread.sleep(2000);
+		WebElement button = driver.findElement(By.xpath("//*[@id=\"form-validate\"]/div[2]/button/span/span"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", button);
+		Thread.sleep(2000);
+
+		WebElement men = driver.findElement(By.xpath("//*[@id=\"nav\"]/ol/li[2]/a"));
+		js.executeScript("arguments[0].click()", men);
+		Thread.sleep(2000);
+
+		WebElement shirt = driver.findElement(By.id("product-collection-image-406"));
+		js.executeScript("arguments[0].click()", shirt);
+		Thread.sleep(2000);
+		
+		
+		WebElement color=driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div[2]/div[3]/div[1]/form/div[3]/div[5]/dl/dd[1]/div/ul/li/a/span[1]/img"));
+				js.executeScript("arguments[0].click()", color);
+		Thread.sleep(2000);
+
+		WebElement size = driver.findElement(By.xpath("//*[@id=\"swatch77\"]/span[1]"));
+		js.executeScript("arguments[0].click()", size);
+		Thread.sleep(2000);
+
+		WebElement add = driver
+				.findElement(By.xpath("//*[@id=\"product_addtocart_form\"]/div[3]/div[6]/div[2]/div[2]/button"));
+		js.executeScript("arguments[0].click()", add);
+		Thread.sleep(2000);
+		
+		WebElement proceed=driver.findElement(By.xpath("//*[@id=\"top\"]/body/div[2]/div/div[2]/div/div/div[2]/div[3]/div/ul/li/button"));
+		js.executeScript("arguments[0].click()", proceed);
+		
+		driver.findElement(By.id("billing:street1")).sendKeys("Nagpur");
+		Thread.sleep(2000);
+		
+		
+		driver.findElement(By.id("billing:city")).sendKeys("Nagpur");
+		Thread.sleep(2000);
+		
+		Select religon=new Select(driver.findElement(By.id("billing:region_id")));
+		religon.selectByVisibleText("American Samoa");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("billing:postcode")).sendKeys("441108");
+		Thread.sleep(2000);
+
+		Select country=new Select(driver.findElement(By.name("billing[country_id]")));
+		country.selectByVisibleText("Australia");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("billing:telephone")).sendKeys("7744001702");
+		Thread.sleep(2000);
+		
+		WebElement continue1=driver.findElement(By.xpath("//*[@id=\"billing-buttons-container\"]/button"));
+		js.executeScript("arguments[0].click()", continue1);
+		Thread.sleep(2000);
+		
+		WebElement FixRate=driver.findElement(By.id("s_method_flatrate_flatrate"));
+		FixRate.click();
+		Thread.sleep(2000);
+		
+		WebElement con=driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/button"));
+		js.executeScript("arguments[0].click()", con);
+		Thread.sleep(2000);
+		
+		WebElement con2=driver.findElement(By.xpath("//*[@id=\"payment-buttons-container\"]/button"));
+		js.executeScript("arguments[0].click()", con2);
+		Thread.sleep(2000);
+		
+		
+		WebElement place=driver.findElement(By.xpath("//*[@id=\"review-buttons-container\"]/button"));
+		js.executeScript("arguments[0].click()", place);
+		
+		System.out.println("Order Book Successfully");
+		Thread.sleep(6000);
+		//driver.close();
+		
+	}
+
+}
